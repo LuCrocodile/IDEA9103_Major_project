@@ -12,6 +12,8 @@ function draw() {
   drawBridge();
 
   drawBGPeople();
+
+  drawScreamingPeople();
 }
 
 function drawSky() {
@@ -90,7 +92,7 @@ function drawBGPeople() {
 
   fill(20, 30, 50);
   noStroke();
-  
+
   // First people
   let fig1X = width * 0.1;
   let fig1Y = height * 0.5 + (height * 0.5) * 0.2;
@@ -109,6 +111,40 @@ function drawBGPeople() {
   ellipse(fig2X - 5, fig2Y + 35, 8, 50);
   ellipse(fig2X + 5, fig2Y + 35, 8, 50);
 }
+
+
+function drawScreamingPeople() {
+  push();
+  translate(width * 0.5, height * 0.85);
+  
+  noFill();
+  
+  // Body
+  fill(30, 40, 60);
+  noStroke();
+  ellipse(0, 20, 80, 200);
+  
+  // Head
+  fill(200, 220, 150);
+  ellipse(0, -60, 70, 90);
+  
+  // Eyes
+  fill(20);
+  ellipse(-15, -70, 12, 15);
+  ellipse(15, -70, 12, 15);
+  
+  // Mouth
+  fill(40, 30, 20);
+  ellipse(0, -40, 35, 50);
+  
+  // Hands on head
+  fill(200, 220, 150);
+  ellipse(-45, -75, 25, 40);
+  ellipse(45, -75, 25, 40);
+  
+  pop();
+}
+
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
