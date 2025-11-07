@@ -72,17 +72,23 @@ function drawBridge() {
   // Bridge surface
   fill(80, 40, 20, 200);
   noStroke();
-
   rect(10, 10, bridgeLength, 500);
-
   rect(-100, -50, bridgeLength + 300, 30);
-  
+  rect(-100, 50, bridgeLength + 300, 30);
+  rect(-100, 150, bridgeLength + 300, 30);
+  rect(-100, 250, bridgeLength + 300, 30);
+
   // Bridge railings
   stroke(100, 50, 30);
-  strokeWeight(3);
+  strokeWeight(4);
   for (let x = 0; x < bridgeLength; x += 20) {
     line(x, 10, x, -20);
   }
+
+  fill("white")
+  rect(-100, 100, bridgeLength + 300, 30);
+  rect(-100, 200, bridgeLength + 300, 30);
+  rect(-100, -40, bridgeLength + 300, 10);
 
   pop();
 }
