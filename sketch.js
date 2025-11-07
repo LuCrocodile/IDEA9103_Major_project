@@ -10,6 +10,8 @@ function draw() {
   drawWater();
 
   drawBridge();
+
+  drawBGPeople();
 }
 
 function drawSky() {
@@ -83,6 +85,30 @@ function drawBridge() {
   pop();
 }
 
+
+function drawBGPeople() {
+
+  fill(20, 30, 50);
+  noStroke();
+  
+  // First people
+  let fig1X = width * 0.1;
+  let fig1Y = height * 0.5 + (height * 0.5) * 0.2;
+  ellipse(fig1X, fig1Y, 40, 80);
+  ellipse(fig1X, fig1Y - 40, 30, 40); 
+  ellipse(fig1X, fig1Y - 45, 50, 10); 
+  ellipse(fig1X - 8, fig1Y + 40, 10, 60); 
+  ellipse(fig1X + 6, fig1Y + 40, 10, 60); 
+  
+  // Second people
+  let fig2X = width * 0.05;
+  let fig2Y = height * 0.5 + (height * 0.5) * 0.1;
+  ellipse(fig2X, fig2Y, 35, 75);
+  ellipse(fig2X, fig2Y - 35, 28, 38);
+  ellipse(fig2X, fig2Y - 40, 48, 8);
+  ellipse(fig2X - 5, fig2Y + 35, 8, 50);
+  ellipse(fig2X + 5, fig2Y + 35, 8, 50);
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
