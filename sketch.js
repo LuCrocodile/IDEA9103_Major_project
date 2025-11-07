@@ -34,7 +34,6 @@ function drawSky() {
   }
 }
 
-
 function drawWater() {
   // Dark swirling blues and purples
   for (let i = height * 0.4; i < height * 0.7; i += 12) {
@@ -125,6 +124,22 @@ function drawScreamingPeople() {
   
   noFill();
   
+  // Scream effect
+  noFill();
+  stroke(255, 200, 100, 100);
+  strokeWeight(3);
+  ellipse(0, -60, 120, 150);
+  ellipse(0, -60, 180, 220);
+  ellipse(0, -60, 240, 290);
+  ellipse(0, -60, 300, 360);
+  
+  // Scream effect 2
+  stroke(255, 150, 50, 80);
+  strokeWeight(2);
+  ellipse(0, -60, 150, 180);
+  ellipse(0, -60, 210, 250);
+  ellipse(0, -60, 270, 320);
+
   // Body
   fill(30, 40, 60);
   noStroke();
@@ -150,7 +165,6 @@ function drawScreamingPeople() {
   
   pop();
 }
-
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
