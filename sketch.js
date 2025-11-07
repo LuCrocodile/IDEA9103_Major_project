@@ -8,6 +8,8 @@ function draw() {
   drawSky();
 
   drawWater();
+
+  drawBridge();
 }
 
 function drawSky() {
@@ -48,7 +50,38 @@ function drawWater() {
   }
 }
 
+function drawBridge() {
+  // Bridge from left middle to bottom middle
+  let startX = 0;
+  let startY = height * 0.4;
+  let endX = width * 0.8;
+  let endY = height;
+  
+  // Calculate distance and angle
+  let bridgeLength = dist(startX, startY, endX, endY);
+  let angle = atan2(endY - startY, endX - startX);
+  
+  push();
+  translate(startX, startY);
+  rotate(angle);
+  
+  // Bridge surface
+  fill(80, 40, 20, 200);
+  noStroke();
 
+  rect(10, 10, bridgeLength, 500);
+
+  rect(-100, -50, bridgeLength + 300, 30);
+  
+  // Bridge railings
+  stroke(100, 50, 30);
+  strokeWeight(3);
+  for (let x = 0; x < bridgeLength; x += 20) {
+    line(x, 10, x, -20);
+  }
+
+  pop();
+}
 
 
 function windowResized() {
